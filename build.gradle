@@ -1,0 +1,36 @@
+
+plugins {
+  id "com.github.johnrengelman.shadow" version "1.2.4"
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    def jettyVersion =  '9.3.8.v20160314'
+    
+    compile 'org.eclipse.jetty:jetty-server:' + jettyVersion
+    compile 'org.eclipse.jetty:jetty-servlet:' + jettyVersion
+    compile 'org.eclipse.jetty:jetty-servlets:' + jettyVersion
+    
+    compile 'org.apache.httpcomponents:httpclient:4.5.3'
+    
+    compile 'com.google.guava:guava:21.0'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.2'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.8.2'
+    compile 'commons-io:commons-io:2.5'
+    compile 'org.apache.commons:commons-lang3:3.5'
+    compile 'org.apache.logging.log4j:log4j-api:2.7'
+    compile 'org.apache.logging.log4j:log4j-core:2.7'
+    
+    compile 'javax.ws.rs:javax.ws.rs-api:2.0'
+}
+
+wrapper {
+	gradleVersion '3.4.1'
+}
+
